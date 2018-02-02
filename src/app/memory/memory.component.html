@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Memories so far</h1>
+  <a [routerLink]="['/memory-create']" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </a>  
+  <table class="table">
+    <thead>
+      <tr>
+      	<th>When</th>
+        <th>Place</th>
+        <th>KM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mem of memories">
+        <td>{{ mem.when_date }}</td>
+        <td>{{ mem.place }}</td>
+        <td>{{ mem.kmeter }}</td>
+        <td><a [routerLink]="['/memory-details', mem._id]">Show Detail</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Add New Memory</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="saveMemory()" #memoryForm="ngForm">
+        <div class="form-group">
+          <label for="name">Place</label>
+          <input type="text" class="form-control" [(ngModel)]="memory.place" name="place" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Km</label>
+          <input type="number" class="form-control" [(ngModel)]="memory.kmeter" name="kmeter" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Description</label>
+          <textarea class="form-control" [(ngModel)]="memory.description" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="name">Date</label>
+          <input type="date" class="form-control" [(ngModel)]="memory.when_date" name="when_date" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!memoryForm.form.valid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
