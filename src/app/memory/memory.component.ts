@@ -9,13 +9,17 @@ import { HttpClient } from '@angular/common/http';
 export class MemoryComponent implements OnInit {
 
 	memories: any;
+  sortedItems: any;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
   	this.http.get('/memory').subscribe(data => {
     	this.memories = data;
-  	});
+      this.memories = this.memories.sort((a: any, b: any) =>
+          new Date(b.when_date).getTime() - new Date(a.when_date).getTime()
+      );
+    });
   }
 
 }

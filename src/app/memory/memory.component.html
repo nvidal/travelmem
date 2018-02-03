@@ -13,7 +13,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let mem of memories">
-        <td>{{ mem.when_date }}</td>
+        <td>{{ mem.when_date | date }}</td>
         <td>{{ mem.place }}</td>
         <td>{{ mem.kmeter }}</td>
         <td><a [routerLink]="['/memory-details', mem._id]">Show Detail</a></td>
