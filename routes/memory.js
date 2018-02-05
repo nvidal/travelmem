@@ -21,7 +21,9 @@ router.get('/:id', function(req, res, next) {
 
 /* SAVE Memory */
 router.post('/', function(req, res, next) {
+  console.log(req.body);
   Memory.create(req.body, function (err, post) {
+    console.log(req.body);
     if (err) return next(err);
     res.json(post);
   });
