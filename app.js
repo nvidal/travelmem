@@ -9,8 +9,7 @@ var app = express();
 
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-//mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/mean-angular5';
-mongoURI = 'mongodb://heroku_f830zzdx:chds61rlq3h1d1slskf48o2n82@ds121238.mlab.com:21238/heroku_f830zzdx';
+mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/travelmemory';
 mongoose.connect(mongoURI, { /*useMongoClient: true,*/ promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
